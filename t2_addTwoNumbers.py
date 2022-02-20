@@ -44,6 +44,7 @@ print(re_lst)
 #         self.val = x
 #         self.next = None
 
+######### Submitted on Leetcode ##########
 '''
 class Solution:
 
@@ -106,7 +107,8 @@ class Solution:
             if idx < len(re_lst)-1:
                 nextNode = ListNode()
                 cur.next = nextNode
-                cur = nextNode #此处不能替换为 cur = ListNode() 因ListNode是创造一个新的node而cur = nextNode是指向与cur.next相同的node
+                cur = cur.next
+                # cur = nextNode #此处不能替换为 cur = ListNode() 因ListNode是创造一个新的node而cur = nextNode是指向与cur.next相同的node
         ######### return ListNode() #############  
             
         
