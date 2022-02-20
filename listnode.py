@@ -1,4 +1,5 @@
-class node: # a sublist for linked list
+####### 链表 #########
+class node: # a sublist for linked list 
     def __init__(self,data = None):
         self.data = data
         self.next = None     #The next() function returns the next item from the iterator.
@@ -38,7 +39,8 @@ class linkedList:
         curNode = self.head
         while True:
             curNode = curNode.next
-            if curIndex == index: return curNode.data
+            if curIndex == index: return curNode
+            
             curIndex += 1
 
     def erase(self,index):
