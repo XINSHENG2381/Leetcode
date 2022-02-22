@@ -41,7 +41,7 @@ for idx, value in enumerate(nums):
         lst.append(dic[value])
         lst.append(idx)
         # print(dic[value],idx)
-    else:
+    else: 
         dic[target-value] = idx
 
 print(lst)
