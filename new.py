@@ -1,65 +1,35 @@
-# class linkednode:
-#     def __init__(self,data):
-#         self.data = data
-#         self.next = None
-#         # self.index = []
+def dfs1(root):
+    if not root:
+        return 
 
-#     def add_node(self,data):
-#         cur = self
-#         while cur.next:
-#             cur = self.next
-#         cur.data = data
-    
-#     def linkednode_length(self):
-#         count = 0
-#         cur = self
-#         while cur.next:
-#             count += 1
-#             cur = cur.next
-#         return count
+    dfs1(root.left)
+    lst1.append(root.val)
+    dfs1(root.right)
 
-#     def insert_node(self,node,index):
-#         cur = self
-#         i = 0
-#         while cur.next:
-#             if i == index:
-#                 cur.next = node
-#             i += 1
-       
-from lib2to3.pytree import Node
+def dfs2(root):
+    if not root:
+        return 
 
+    dfs2(root.left)
+    lst2.append(root.val)
+    dfs2(root.right)
 
 if __name__ == '__main__':
-    # lst = []
-    # cur = linkedListNode
-    # while cur.next != None:
-    #     lst.append(cur.data)
-    #     cur = cur.next
-    # p1 = Node
-    # p2 = Node.next
-    # temp = p1
-    # p1 = p2
-    # p2 = temp
+    root = input()
+    layer0 = root.val
+    lst1 = []
+    lst2 = []
+    dfs1(root.left)
+    dfs2(root.right)
 
-    # p2 = p1.next
-    # temp = p1
-    # p1 = p2
-    # p2 = temp    
+    ###打印左边###
+    print(layer0+'->',end = '')
+    for i in range(len(lst1)):
+        print(lst1[i]+'->')
+    print(lst1[-1])
 
-    p1 = Node
-    p2 = Node.next
-
-    while p2.next != None:
-        temp = p1
-        p1 = p2
-        p2 = temp
-        p2.next = p1            
-        p1 = Node
-    
-
-
-
-
-
-
-
+    ###打印右边###
+    print(layer0+'->',end = '')
+    for i in range(len(lst2)):
+        print(lst2[i]+'->')
+    print(lst2[-1])
